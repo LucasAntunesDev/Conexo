@@ -61,7 +61,6 @@ class GrupoDisciplinaController extends Controller {
             $grupo_disciplina->save();
 
             return redirect()->route('grupos');
-            return back()->with('success', 'Disciplina salva com sucesso!');
         }
     }
 
