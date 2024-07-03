@@ -10,9 +10,13 @@ use App\Http\Controllers\Controller;
 
 class DisciplinaController extends Controller {
 
-    public function index() {
+    public function index(Request $request) {
+        $query = Disciplina::query();
+
+        if ($request->filled('nome')) $query->where('nome', 'like', '%' . $request->nome . '%');
+        
         $disciplina = new Disciplina();
-        $disciplinas = Disciplina::paginate(16);
+        $disciplinas = $query->paginate(16);
         $professores = Professor::all();
 
         return view('disciplinas.disciplinas', [

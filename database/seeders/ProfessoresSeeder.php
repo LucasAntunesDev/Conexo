@@ -12,15 +12,9 @@ class ProfessoresSeeder extends Seeder
     public function run(): void
     {
         DB::table('professores')->insert([
-            ['id' => 1,  'nome' =>'Rafael Jaques', 'login' => 'Rafael Jaques', 'senha' => bcrypt('Rafael Jaques')],
-            ['id' => 2,  'nome' =>'Thyago Salvá', 'login' => 'Thyago Salvá', 'senha' => bcrypt('Thyago Salvá')],
-            ['id' => 3,  'nome' =>'Ivan Prá', 'login' => 'Ivan Prá', 'senha' => bcrypt('Ivan Prá')],
-            ['id' => 4,  'nome' =>'Eduardo Schenato', 'login' => 'Eduardo Schenato', 'senha' => bcrypt('Eduardo Schenato')],
-            ['id' => 5,  'nome' =>'Ronaldo', 'login' => 'Ronaldo', 'senha' => bcrypt('Ronaldo')],
-            ['id' => 6,  'nome' =>'Maurico Rosito', 'login' => 'Maurico Rosito', 'senha' => bcrypt('Maurico Rosito')],
-            ['id' => 7,  'nome' =>'Lissandra', 'login' => 'Lissandra', 'senha' => bcrypt('Lissandra')],
-            ['id' => 8,  'nome' =>'Sandro', 'login' => 'Sandro', 'senha' => bcrypt('Sandro')],
-            ['id' => 9, 'nome' => 'admin', 'login' => 'admin', 'senha' => bcrypt('admin')],
+            ['id' => 1,  'nome' =>'Professor 1', 'login' => 'Professor 1', 'senha' => bcrypt('prof_1')],
+            ['id' => 2,  'nome' =>'Professor 2', 'login' => 'Professor 2', 'senha' => bcrypt('prof_2')],
+            ['id' => 3,  'nome' =>'Profeesor 3', 'login' => 'Profeesor 3', 'senha' => bcrypt('prof_3')],
         ]);
     }
 }

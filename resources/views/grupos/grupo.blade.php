@@ -75,13 +75,15 @@
                         <h4>{{ $disciplinas[$disciplina]->nome }}</h4>
 
                         @if ($grupos_disciplinas !== null)
+                        <p>Vazio</p>
+                        @else
+                        {{-- @if ($grupos_disciplinas !== null) --}}
 
                         <form action="{{route('grupodisciplinadelete', $grupo->id) }}" method="POST"
                             class="inline-flex gap-x-2 mr-0">
                             <input type="hidden" name="_method" value="DELETE">
                             {{ csrf_field()}}
-                            <x-edit-button link="{{ route('grupodisciplinaform', ['id' => $grupo->id]) }}">
-                            </x-edit-button>
+                            <x-edit-button link="{{ route('grupodisciplinaform', ['id' => $grupo->id]) }}"></x-edit-button>
                             <x-delete-button></x-delete-button>
                         </form>
                         @endif

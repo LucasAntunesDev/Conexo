@@ -16,6 +16,14 @@ class AuthController extends Controller {
 
     public function fazerLogin(Request $request) {
         
+        $login = $request->input('login');
+        
+        $senha = $request->input('senha');
+        
+        $user = Professor::where('login', $login)->first();
+        
+        $senha_hasheada =  Hash::check($senha, $user->senha);
+
         $messages = [
             'login.required' => 'Você deve preencher o seu login',
             'senha.required' => 'Você deve preencher a sua senha'
@@ -26,12 +34,7 @@ class AuthController extends Controller {
             'senha' => 'required',
         ], $messages);
 
-        $login = $request->input('login');
-        $senha = $request->input('senha');
-    
-        $user = Professor::where('login', $login)->first();
-
-        if ($user && Hash::check($senha, $user->senha)) {
+        if ($user && $senha_hasheada) {
             Auth::login($user);
     
             return redirect()->intended('/');

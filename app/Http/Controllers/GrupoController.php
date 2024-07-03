@@ -11,10 +11,16 @@ use App\Http\Controllers\Controller;
 
 class GrupoController extends Controller {
 
-    public function index() {
+    public function index(Request $request) {
+
+        $query = Grupo::query();
+        
+        if ($request->filled('nome')) $query->where('nome', 'like', '%' . $request->nome . '%');
+        
         $grupo = new Grupo();
-        $grupos = Grupo::paginate(16);
+        $grupos = $query->paginate(16);
         $disciplinas = Disciplina::all();
+
 
         return view('grupos.grupos', [
             'grupo' => $grupo,

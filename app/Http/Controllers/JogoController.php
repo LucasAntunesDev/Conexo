@@ -29,14 +29,13 @@ class JogoController extends Controller {
     public function index(Request $request) {
         $query = Jogo::query();
 
-        
         $disciplinas = Disciplina::all();
-        
+
         if ($request->filled('nome')) $query->where('nome', 'like', '%' . $request->nome . '%');
         if ($request->filled('data')) $query->where('data', $request->data);
 
         $jogos = $query->paginate(16);
-        
+
         return view('jogos.jogos', [
             'jogos' => $jogos,
             'disciplinas' => $disciplinas
@@ -196,5 +195,4 @@ class JogoController extends Controller {
 
         return back()->with('delete', 'Jogo deletado com sucesso!');
     }
-
 }

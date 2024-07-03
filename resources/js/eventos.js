@@ -31,10 +31,6 @@ if (document.querySelector('button.spin')) {
   })
 }
 
-if (document.querySelector('#pesquisar')) {
-  document.querySelector('#pesquisar').addEventListener('input', filtrar)
-}
-
 const toast = document.querySelector('.toast')
 
 if (toast) {

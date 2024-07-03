@@ -44,7 +44,7 @@
                     <label for="grupo_id" class="label capitalize">grupo</label>
                     <select id="grupo_id" name="grupo_id" class="text-gray-700 input">
                         @foreach($grupos as $grupo)
-                        <option value='{{$grupo->id}}' {{$grupo->id == $grupo_disciplina->grupo_id ? "selected" :
+                        <option value='{{$grupo->id}}' {{$grupo->id == $_GET['id'] ? "selected" :
                             ""}}>{{$grupo->nome}} </option>
                         @endforeach
                     </select>

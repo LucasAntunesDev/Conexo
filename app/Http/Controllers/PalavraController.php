@@ -16,8 +16,13 @@ class PalavraController extends Controller {
     public function __construct(protected Palavra $palavrasRepository) {
     }
 
-    public function index() {
-        $palavras = Palavra::paginate(24);
+    public function index(Request $request) {
+
+        $query = Palavra::query();
+
+        if ($request->filled('nome')) $query->where('nome', 'like', '%' . $request->nome . '%');
+
+        $palavras = $query->paginate(24);
         $grupos_palavras = GrupoPalavra::all();
 
         return view('palavras.palavras', [

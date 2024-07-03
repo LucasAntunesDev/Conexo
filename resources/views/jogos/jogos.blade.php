@@ -10,7 +10,7 @@
         </svg>
     </a>
 
-    <form method="GET" action="{{ url('/jogos') }}" class="flex items-center gap-x-2">
+    <form method="GET" action="{{ url('/jogos') }}" class="flex items-center gap-x-2 m-0">
         <input type="text" name="nome" placeholder="Nome do jogo" value="{{ request('nome') }}" class="input">
         <input type="date" name="data" placeholder="Data do jogo" value="{{ request('data') }}" class="input">
         <button type="submit" class="btn-secundary inline-flex items-center gap-x-2 py-3 px-8 ml-4">
