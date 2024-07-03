@@ -19,7 +19,7 @@ h-16 bg-transparent min-w-[99vw] max-w-[99vw] mx-auto mt-2 rounded-xl py-4">
                     @foreach ($modulos as $modulo)
 
                     <li
-                        class="hover:transicao py-4 px-5 rounded-xl {{(str_contains(url()->current(), strtolower($modulo))) ? 'font-semibold text-violet-500 hover:text-violet-600' : 'hover:text-violet-500 text-neutral-600' }}">
+                        class="hover:transicao hover:bg-violet-300 py-4 px-5 rounded-xl {{(str_contains(url()->current(), strtolower($modulo))) ? 'font-semibold text-violet-500 hover:text-violet-600' : ' text-neutral-600' }}">
                         <a href="{{ route($modulo) }}" class=" transicao capitalize">
                             {{$modulo}}
                         </a>

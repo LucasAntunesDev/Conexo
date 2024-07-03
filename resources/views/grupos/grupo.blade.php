@@ -81,7 +81,6 @@
                             <x-edit-button link="{{ route('grupodisciplinaform', ['id' => $grupo->id]) }}"></x-edit-button>
                             <x-delete-button></x-delete-button>
                         </form>
-                        @endif
                     </div>
                     @endforeach
                 </div>
