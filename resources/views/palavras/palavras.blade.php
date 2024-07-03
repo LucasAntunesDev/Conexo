@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title', 'Palavras - Conexo')
 @section('content')
-<div class="mb-8 flex grow flex-col items-center justify-center gap-2">
+<div class="mb-8 flex grow flex-col items-center gap-2">
     <div class="flex items-center justify-around gap-8">
         <h1 class="my-8 inline-flex items-center gap-x-2 text-5xl font-bold text-violet-500">
             Palavras
