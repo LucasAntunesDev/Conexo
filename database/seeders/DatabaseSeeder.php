@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PalavrasSeeder::class,
             ProfessoresSeeder::class,
-            PalavrasSeeder::class,
-            ProfessoresSeeder::class,
             DisciplinasSeeder::class,
             GruposSeeder::class,
-            GruposPalavrasSeeder::class
+            GruposPalavrasSeeder::class,
+            GruposDisciplinasSeeder::class,
+            JogosSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 
